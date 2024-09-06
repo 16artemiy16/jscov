@@ -19,11 +19,8 @@ jobs:
       - name: Test
         run: npm test
 
-      - name: Monitor coverage
-        uses: slavcodev/coverage-monitor-action@v1
+      - name: Upload coverage results
+        uses: actions/upload-artifact@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          coverage_path: "./coverage/clover.xml"
-          threshold_alert: 10
-          threshold_warning: 50
-          threshold_metric: "lines"
+          name: coverage
+          path: ./coverage/
