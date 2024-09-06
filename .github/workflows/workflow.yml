@@ -13,14 +13,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Install
+        run: npm i
+
       - name: Test
-        run: npm i && npm test
+        run: npm test
 
       - name: Monitor coverage
         uses: slavcodev/coverage-monitor-action@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          coverage_path: "logs/clover.xml"
+          coverage_path: "coverage/clover.xml"
           threshold_alert: 10
           threshold_warning: 50
           threshold_metric: "lines"
