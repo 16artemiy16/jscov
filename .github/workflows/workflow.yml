@@ -19,8 +19,7 @@ jobs:
       - name: Test
         run: npm run test
 
-      - name: Upload coverage results
-        uses: actions/upload-artifact@v2
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
         with:
-          name: coverage
-          path: ./coverage/
+          github-token: ${{ secrets.GITHUB_TOKEN }}
