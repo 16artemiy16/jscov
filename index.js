@@ -6,6 +6,7 @@ const decorate = (text) => {
     return `Text is ${text}`;
 }
 
+
 module.exports = {
     sum, decorate
 }
