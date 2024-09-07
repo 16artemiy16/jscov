@@ -26,12 +26,7 @@ jobs:
           threshold_metric: "lines"
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Comment on the pull request
-        uses: peter-evans/pull-request-comment@v1
+      - uses: mshick/add-pr-comment@v2
         with:
-          issue-number: ${{ github.event.pull_request.number }}
-          body: |
-            Thank you for creating this pull request! We appreciate your contribution. 
-            We will review it shortly. 😊
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          message: |
+            **Hello MAIN**
