@@ -19,13 +19,16 @@ jobs:
       - name: upload-date-svg
         uses: actions/upload-artifact@v4
         with:
-          name: date-output.svg
+          name: date.svg
           path: date.svg
+
+      - name: Check Dir
+        run: ls
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
           tag_name: v1.0.0
-          files: date-output.svg
+          files: date.svg
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
