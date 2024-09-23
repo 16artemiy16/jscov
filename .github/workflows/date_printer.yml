@@ -1,0 +1,23 @@
+name: Date Check
+on:
+  push:
+    branches: ['master']
+
+jobs:
+  display_date:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 19
+
+      - name: generate-date-svg
+      - run:
+          node printer.js | tee date.svg
+
+      - name: upload-date-svg
+        uses: actions/upload-artifact@v2
+        with:
+          id: 1
+          path: date.svg

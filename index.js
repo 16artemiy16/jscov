@@ -9,5 +9,3 @@ const decorate = (text) => {
 module.exports = {
     sum, decorate
 }
-
-console.log(decorate(sum(10, 15)))
