@@ -25,10 +25,8 @@ jobs:
       - name: Check Dir
         run: ls
 
-      - name: Create Release
-        uses: softprops/action-gh-release@v1
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          tag_name: v1.0.0
-          files: date.svg
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./path/to/generated/svg/folder # замените на директорию, содержащую ваш SVG
