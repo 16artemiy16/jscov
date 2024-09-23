@@ -6,6 +6,16 @@ on:
 jobs:
   display_date:
     runs-on: ubuntu-latest
+
+  permissions:
+    actions: read-write
+    contents: read-write
+    issues: read-write
+    pull-requests: read-write
+    statuses: read-write
+    repository-projects: read-write
+    discussions: read-write
+
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
