@@ -21,3 +21,11 @@ jobs:
         with:
           name: date-output.svg
           path: date.svg
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v1.0.0
+          files: date-output.svg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
