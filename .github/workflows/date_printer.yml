@@ -8,16 +8,16 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      deployments: read-write
-      packages: read-write
-      pages: read-write
-      actions: read-write
-      contents: read-write
-      issues: read-write
-      pull-requests: read-write
-      statuses: read-write
-      repository-projects: read-write
-      discussions: read-write
+      deployments: write
+      packages: write
+      pages: write
+      actions: write
+      contents: write
+      issues: write
+      pull-requests: write
+      statuses: write
+      repository-projects: write
+      discussions: write
 
     steps:
       - uses: actions/checkout@v4
