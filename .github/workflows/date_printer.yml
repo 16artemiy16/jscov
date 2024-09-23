@@ -13,11 +13,11 @@ jobs:
           node-version: 19
 
       - name: generate-date-svg
-      - run:
+        run:
           node printer.js | tee date.svg
 
       - name: upload-date-svg
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
-          id: 1
+          name: date-output.svg
           path: date.svg
